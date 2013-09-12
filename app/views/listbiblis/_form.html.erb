@@ -1,0 +1,46 @@
+<% if  @listbibli.errors.any? %>
+<div id="error_explanation">
+	<h2> Infelizmente não foi possivel completar a ação. </h2>
+</div>
+<% end %>
+<div align="center">
+<%=form_for @listbibli do |f| %>
+	<p>
+		<%= f.label :nome %>
+		<%= f.text_field :nome %>
+		<% if @listbibli.errors.has_key? :nome %>
+		<div class="error_message">
+		<%= @listbibli.errors[:nome].first %>
+		<% end %>
+		</div>
+	</p>
+	<div align="center">
+	<p>
+		<%= f.label :telefone %>
+		<%= f.text_field :telefone %>
+		<% if @listbibli.errors.has_key? :telefone %>
+		<div class="error_message">
+		<%= @listbibli.errors[:telefone].first %>
+		<% end %>
+		</div>
+	</p>
+</div>
+	<p>
+		<%= f.label :endbibli_id %>
+		<%= f.select :endbibli_id, Endbibli.all.collect { |a| [a.id,a.id] } %>
+		<% if @listbibli.errors.has_key? :endbibli_id %>
+		<div class="error_message">
+		<%= @listbibli.errors[:endbibli_id].first %>
+		<% end %>
+		</div>
+	</p>
+	<p>
+		<div class="form-actions">
+  		<button type="submit" class="btn btn-primary">Salvar</button>
+  		<%= link_to listbiblis_path do %>
+  		<button type="button" class="btn">Cancelar</button>
+  		<% end %>
+		</div>
+	</p>
+<% end %>
+</div>

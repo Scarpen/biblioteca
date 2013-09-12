@@ -1,0 +1,46 @@
+<% if  @endbibli.errors.any? %>
+<div id="error_explanation" align="center">
+	<h2> Não foi possivel completar a ação. </h2>
+</div>
+<% end %>
+<div align="center">
+<%=form_for @endbibli do |f| %>
+	<p>
+		<%= f.label :rua %>
+		<%= f.text_field :rua %>
+		<% if @endbibli.errors.has_key? :rua %>
+		<div class="error_message">
+		<%= @endbibli.errors[:rua].first %>
+		<% end %>
+		</div>
+	</p>
+		<p>
+		<%= f.label :bairro %>
+		<%= f.text_field :bairro %>
+		<% if @endbibli.errors.has_key? :bairro %>
+		<div class="error_message">
+		<%= @endbibli.errors[:bairro].first %>
+		<% end %>
+		</div>
+	</p>
+	<div align="center">
+	<p>
+		<%= f.label :numero %>
+		<%= f.text_field :numero %>
+		<% if @endbibli.errors.has_key? :numero %>
+		<div class="error_message">
+		<%= @endbibli.errors[:numero].first %>
+		<% end %>
+		</div>
+	</p>
+	</div>
+	<p>
+		<div class="form-actions">
+  		<button type="submit" class="btn btn-primary">Salvar</button>
+  		<%= link_to endbiblis_path do%>
+  		<button type="button" class="btn">Cancelar</button>
+  		<% end %>
+		</div>
+		</p>
+</div>
+<% end %>

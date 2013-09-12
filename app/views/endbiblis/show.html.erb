@@ -1,0 +1,15 @@
+<h2> Endereço: <%= @endbibli.id %> </h2>
+<ul>
+	<li> Rua: <%= @endbibli.rua %> </li>
+	<li> Bairro: <%= @endbibli.bairro %> </li>
+	<li> Numero: <%= @endbibli.numero %> </li>
+</ul>
+	<%= link_to edit_endbibli_path do %>
+  	<button class="btn">Editar Endereço</button>
+  	<% end %>
+  	<%= link_to @endbibli, method: :delete, data: {confirm: 'Tem certeza?'} do %>
+  	<button class="btn btn-danger">Apagar Endereço</button>
+  	<% end %>
+  	<%= link_to endbiblis_path do%>
+  	<button class="btn">Voltar</button>
+  	<%end%>
