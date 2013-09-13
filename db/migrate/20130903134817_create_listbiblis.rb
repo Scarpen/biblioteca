@@ -1,6 +1,6 @@
 class CreateListbiblis < ActiveRecord::Migration
   def change
-    create_table :listbiblis do |t|
+      create_table :listbiblis do |t|
       t.string :nome
       t.integer :telefone
 

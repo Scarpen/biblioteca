@@ -27,7 +27,7 @@
 </div>
 	<p>
 		<%= f.label :endbibli_id %>
-		<%= f.select :endbibli_id, Endbibli.all.collect { |a| [a.id,a.id] } %>
+		<%= f.select :endbibli_id, Endbibli.all.collect { |a| [a.rua,a.id] } %>
 		<% if @listbibli.errors.has_key? :endbibli_id %>
 		<div class="error_message">
 		<%= @listbibli.errors[:endbibli_id].first %>
