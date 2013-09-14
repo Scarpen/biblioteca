@@ -1,0 +1,18 @@
+<h2> Biblioteca: <%= @listbibli.id %> </h2>
+
+<div>
+<ul>
+	<li> Nome: <%= @listbibli.nome %> </li>
+	<li> Telefone: <%= @listbibli.telefone %> </li>
+</ul>
+</div>
+
+	<%= link_to edit_listbibli_path do %>
+    <button class="btn">Editar Biblioteca</button>
+    <% end %>
+    <%= link_to @listbibli, method: :delete, data: {confirm: 'Tem certeza?'} do %>
+    <button class="btn btn-danger">Apagar Biblioteca</button>
+    <% end %>
+    <%= link_to listbiblis_path do%>
+    <button class="btn">Voltar</button>
+    <% end %>

@@ -2,6 +2,8 @@ Biblioteca::Application.routes.draw do
   resources :testes
   resources :endbiblis
   resources :listbiblis
+  resources :autors
+  resources :livros
   root :to => "homes#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.

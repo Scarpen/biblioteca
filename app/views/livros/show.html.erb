@@ -1,0 +1,15 @@
+<h2> Livro: <%= @livro.titulo%> </h2>
+<ul>
+	<li> Editora: <%= @livro.editora %> </li>
+	<li> Pais: <%= @livro.pais %> </li>
+	<li> Data: <%= @livro.data %> </li>
+</ul>
+	<%= link_to edit_livro_path do %>
+  	<button class="btn">Editar Endereço</button>
+  	<% end %>
+  	<%= link_to @livro, method: :delete, data: {confirm: 'Tem certeza?'} do %>
+  	<button class="btn btn-danger">Apagar Endereço</button>
+  	<% end %>
+  	<%= link_to livro_path do%>
+  	<button class="btn">Voltar</button>
+  	<%end%>

@@ -1,0 +1,35 @@
+<h1>Listando Endereços</h1><br />
+<div align="center">
+<table border="1">
+  <tr>
+    <th width=10%>Id</th>
+    <th width=30%>Rua</th>
+    <th width=30%>Bairro</th>
+    <th width=10%>Numero</th>
+
+  </tr>
+
+<% @endbibli.each do |t| %>
+  <tr>
+    <td><%= t.id%></td>
+    <td><%= t.rua%></td>
+    <td><%= t.bairro%></td>
+    <td><%= t.numero%></td>
+    <td><%= link_to 'Mostrar', t %></td>
+    <td><%= link_to 'Editar', edit_endbibli_path(t) %></td>
+    <td><%= link_to 'Apagar', t, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+<br />
+<div class="btn-group">
+  <%= link_to new_endbibli_path do%>
+  <button class="btn">Novo Endereço</button>
+  <%end%>
+  <%= link_to listbiblis_path do%>
+  <button class="btn">Lista Bibliotecas</button>
+  <%end%>
+</div>
+
+
