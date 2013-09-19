@@ -3,11 +3,10 @@ class LivrosController < ApplicationController
 		@livro = Livro.all
 	end
 	def new
-		
 		@livro = Livro.new
 	end
 	def create
-		@livro = Livro.new(params[:listbibli])
+		@livro = Livro.new(params[:livro])
 		if @livro.save
 			redirect_to @livro, :notice => 'Livro Cadastrado'
 			
@@ -34,7 +33,7 @@ class LivrosController < ApplicationController
 	def destroy
 		@livro = Livro.find(params[:id])
 		if @livro.destroy
-			redirect_to @listbibli, :notice => 'Cadastro apagado'
+			redirect_to @livro, :notice => 'Cadastro apagado'
 		else
 			render :index
 		end

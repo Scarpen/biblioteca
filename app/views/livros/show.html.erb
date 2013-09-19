@@ -3,6 +3,12 @@
 	<li> Editora: <%= @livro.editora %> </li>
 	<li> Pais: <%= @livro.pais %> </li>
 	<li> Data: <%= @livro.data %> </li>
+  <h4> Bibliotecas que contem o livro:</h4>
+  <% Listbibli.all.each do |b|%>
+  <% if @livro.listbiblis.include?(b)%>
+    <li> <%= b.nome %> </li>
+  <%end%>
+  <%end%>
 </ul>
 	<%= link_to edit_livro_path do %>
   	<button class="btn">Editar Endereço</button>

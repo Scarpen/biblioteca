@@ -1,62 +1,62 @@
 <% if  @livro.errors.any? %>
-<div id="error_explanation" align="center">
-	<h2> Não foi possivel completar a ação. </h2>
-</div>
-<% end %>
-<div align="center">
-<%=form_for @livro do |f| %>
-	<p>
-		<%= f.label :titulo %>
-		<%= f.text_field :titulo %>
-		<% if @livro.errors.has_key? :titulo %>
-		<div class="error_message">
-		<%= @livro.errors[:titulo].first %>
-		<% end %>
-		</div>
-	</p>
-		<p>
-		<%= f.label :editora %>
-		<%= f.text_field :editora %>
-		<% if @livro.errors.has_key? :editora %>
-		<div class="error_message">
-		<%= @livro.errors[:editora].first %>
-		<% end %>
-		</div>
-	</p>
-	<div align="center">
-	<p>
-		<%= f.label :pais %>
-		<%= f.text_field :pais %>
-		<% if @livro.errors.has_key? :pais %>
-		<div class="error_message">
-		<%= @livro.errors[:pais].first %>
-		<% end %>
-		</div>
-	</p>
-	<p>
-		<%= f.label :data %>
-		<%= f.date_select :data %>
-		<% if @livro.errors.has_key? :data %>
-		<div class="error_message">
-		<%= @livro.errors[:data].first %>
-		<% end %>
-		</div>
-	</p>
-	<p>
-		<h2> Bibliotecas cadastradas </h2>
-		<% Listbibli.all.each do |d|%>
-		<%= check_box_tag :listbibli_ids, d.id %> <p> <%= d.nome %></p>
-		<% end %>
-	</p>
+	<div id="error_explanation" align="center">
+		<h2> Não foi possivel completar a ação. </h2>
 	</div>
-	<p>
-		<div class="form-actions">
-  		<button type="submit" class="btn btn-primary">Salvar</button>
-  		<%= link_to endbiblis_path do%>
-  		<button type="button" class="btn">Cancelar</button>
-  		<% end %>
+<% end %>
+	<div align="center">
+	<%=form_for @livro do |f| %>
+		<p>
+			<%= f.label :titulo %>
+			<%= f.text_field :titulo %>
+			<% if @livro.errors.has_key? :titulo %>
+			<div class="error_message">
+				<%= @livro.errors[:titulo].first %>
+			<% end %>
+			</div>
+		</p>
+			<p>
+			<%= f.label :editora %>
+			<%= f.text_field :editora %>
+			<% if @livro.errors.has_key? :editora %>
+			<div class="error_message">
+				<%= @livro.errors[:editora].first %>
+			<% end %>
+			</div>
+		</p>
+		<div align="center">
+		<p>
+			<%= f.label :pais %>
+			<%= f.text_field :pais %>
+			<% if @livro.errors.has_key? :pais %>
+			<div class="error_message">
+				<%= @livro.errors[:pais].first %>
+			<% end %>
+			</div>
+		</p>
+		<p>
+			<%= f.label :data %>
+			<%= f.date_select :data %>
+			<% if @livro.errors.has_key? :data %>
+			<div class="error_message">
+				<%= @livro.errors[:data].first %>
+			<% end %>
+			</div>
+		</p>
+		<p>
+			<h3> Selecione as bibliotecas que contém o livro </h3>
+			<% Listbibli.all.each do |d|%>		
+				<p><%= check_box_tag "livro[listbibli_ids][]", d.id, @livro.listbiblis.include?(d) %> <%= d.nome %> </p>
+			<% end %>
+		</p>
 		</div>
+		<p>
+			<div class="form-actions">
+	  			<button type="submit" class="btn btn-primary">Salvar</button>
+	  			<%= link_to endbiblis_path do%>
+	  				<button type="button" class="btn">Cancelar</button>
+	  			<% end %>
+			</div>
 		</p>
 
-</div>
+	</div>
 <% end %>

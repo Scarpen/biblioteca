@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130914182800) do
+ActiveRecord::Schema.define(:version => 20130919120658) do
 
   create_table "autors", :force => true do |t|
     t.string   "nome"
@@ -20,11 +20,9 @@ ActiveRecord::Schema.define(:version => 20130914182800) do
     t.datetime "updated_at",      :null => false
   end
 
-  create_table "autorslivros", :force => true do |t|
-    t.integer  "livro_id"
-    t.integer  "autor_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "autors_livros", :force => true do |t|
+    t.integer "livro_id"
+    t.integer "autor_id"
   end
 
   create_table "endbiblis", :force => true do |t|
@@ -45,11 +43,9 @@ ActiveRecord::Schema.define(:version => 20130914182800) do
 
   add_index "listbiblis", ["endbibli_id"], :name => "index_listbiblis_on_endbibli_id"
 
-  create_table "listbiblislivros", :force => true do |t|
-    t.integer  "livro_id"
-    t.integer  "listbibli_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+  create_table "listbiblis_livros", :force => true do |t|
+    t.integer "listbibli_id"
+    t.integer "livro_id"
   end
 
   create_table "livros", :force => true do |t|

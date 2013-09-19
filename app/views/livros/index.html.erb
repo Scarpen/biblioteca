@@ -1,22 +1,23 @@
-<h1>Listando Endereços</h1><br />
+<h1>Listando Livros</h1><br />
 <div align="center">
 <table border="1">
   <tr>
-    <th width=10%>Id</th>
-    <th width=30%>Rua</th>
-    <th width=30%>Bairro</th>
-    <th width=10%>Numero</th>
-
+    <th width=3%>Id</th>
+    <th width=30%>Titulo</th>
+    <th width=30%>Editora</th>
+    <th width=10%>Pais</th>
+    <th width=10%>Data</th>
   </tr>
 
-<% @endbibli.each do |t| %>
+<% @livro.each do |t| %>
   <tr>
     <td><%= t.id%></td>
-    <td><%= t.rua%></td>
-    <td><%= t.bairro%></td>
-    <td><%= t.numero%></td>
+    <td><%= t.titulo%></td>
+    <td><%= t.editora%></td>
+    <td><%= t.pais%></td>   
+    <td><%= t.data%></td>
     <td><%= link_to 'Mostrar', t %></td>
-    <td><%= link_to 'Editar', edit_endbibli_path(t) %></td>
+    <td><%= link_to 'Editar', edit_livro_path(t) %></td>
     <td><%= link_to 'Apagar', t, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
   </tr>
 <% end %>
@@ -24,8 +25,8 @@
 </div>
 <br />
 <div class="btn-group">
-  <%= link_to new_endbibli_path do%>
-  <button class="btn">Novo Endereço</button>
+  <%= link_to new_livro_path do%>
+  <button class="btn">Novo Livro</button>
   <%end%>
   <%= link_to listbiblis_path do%>
   <button class="btn">Lista Bibliotecas</button>
