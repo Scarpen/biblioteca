@@ -1,18 +1,19 @@
-<h2> Biblioteca: <%= @listbibli.id %> </h2>
+<h2> Autor: <%= @autor.id %> </h2>
 
 <div>
 <ul>
-	<li> Nome: <%= @listbibli.nome %> </li>
-	<li> Telefone: <%= @listbibli.telefone %> </li>
+	<li> Nome: <%= @autor.nome %> </li>
+	<li> Data de Nascimento: <%= @autor.data_nascimento %> </li>
 </ul>
+
 </div>
 
-	<%= link_to edit_listbibli_path do %>
-    <button class="btn">Editar Biblioteca</button>
+	<%= link_to edit_autor_path do %>
+    <button class="btn">Editar Autor</button>
     <% end %>
-    <%= link_to @listbibli, method: :delete, data: {confirm: 'Tem certeza?'} do %>
-    <button class="btn btn-danger">Apagar Biblioteca</button>
+    <%= link_to @autor, method: :delete, data: {confirm: 'Tem certeza?'} do %>
+    <button class="btn btn-danger">Apagar Autor</button>
     <% end %>
-    <%= link_to listbiblis_path do%>
+    <%= link_to autors_path do%>
     <button class="btn">Voltar</button>
     <% end %>

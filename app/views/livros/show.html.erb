@@ -10,12 +10,18 @@
   <%end%>
   <%end%>
 </ul>
-	<%= link_to edit_livro_path do %>
+<h4>Autor(es):</h4>
+<ul>
+    <% for autor in @livro.autors %>
+        <li> <%= autor.nome %>
+    <%end%>
+</ul>
+	  <%= link_to edit_livro_path do %>
   	<button class="btn">Editar Endereço</button>
   	<% end %>
   	<%= link_to @livro, method: :delete, data: {confirm: 'Tem certeza?'} do %>
   	<button class="btn btn-danger">Apagar Endereço</button>
   	<% end %>
-  	<%= link_to livro_path do%>
+  	<%= link_to livros_path do %>
   	<button class="btn">Voltar</button>
-  	<%end%>
+    <%end%>

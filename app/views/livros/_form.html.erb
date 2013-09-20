@@ -47,6 +47,16 @@
 			<% Listbibli.all.each do |d|%>		
 				<p><%= check_box_tag "livro[listbibli_ids][]", d.id, @livro.listbiblis.include?(d) %> <%= d.nome %> </p>
 			<% end %>
+			<br/>
+		</p>
+		<h3> Autor(es) </h3>
+		<p>
+			<%= f.fields_for :autors do |builder| %>
+			<%= render 'autors_fields', f: builder %>
+
+			<%end%>
+
+
 		</p>
 		</div>
 		<p>

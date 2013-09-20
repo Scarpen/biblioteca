@@ -4,6 +4,7 @@ class LivrosController < ApplicationController
 	end
 	def new
 		@livro = Livro.new
+		3.times { @livro.autors.build }
 	end
 	def create
 		@livro = Livro.new(params[:livro])
@@ -33,7 +34,7 @@ class LivrosController < ApplicationController
 	def destroy
 		@livro = Livro.find(params[:id])
 		if @livro.destroy
-			redirect_to @livro, :notice => 'Cadastro apagado'
+			redirect_to @livros, :notice => 'Cadastro apagado'
 		else
 			render :index
 		end

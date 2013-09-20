@@ -1,0 +1,6 @@
+<p class="fields">
+	<%= f.label :nome, "Autor" %>
+	<%= f.text_field :nome %>
+	<%= f.check_box '_destroy' %>dasd
+	<%= link_to_function "remove", "remove_fields(this)" %>
+</p>
