@@ -6,6 +6,9 @@ Biblioteca::Application.routes.draw do
   resources :livros
   resources :listbiblis_livros
   resources :autors_livros
+  resources :usuarios
+  resource :confirmation, :only => [:show]
+  resource :usuario_sessions, :only => [:create, :new, :destroy]
   root :to => "homes#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,26 +1,26 @@
-<% if  @autors.errors.any? %>
+<% if  @usuarios.errors.any? %>
 <div id="error_explanation">
 	<h2> Infelizmente não foi possivel completar a ação. </h2>
 </div>
 <% end %>
 <div align="center">
-<%=form_for @autor do |f| %>
+<%=form_for @usuario do |f| %>
 	<p>
-		<%= f.label :nome %>
-		<%= f.text_field :nome %>
-		<% if @autors.errors.has_key? :nome %>
+		<%= f.label :login %>
+		<%= f.text_field :login %>
+		<% if @autors.errors.has_key? :login %>
 		<div class="error_message">
-		<%= @autors.errors[:nome].first %>
+		<%= @autors.errors[:login].first %>
 		<% end %>
 		</div>
 	</p>
 	<div align="center">
 	<p>
-		<%= f.label :data_nascimento %>
-		<%= f.date_select :data_nascimento %>
-		<% if @autors.errors.has_key? :data_nascimento %>
+		<%= f.label :senha %>
+		<%= f.date_select :senha %>
+		<% if @autors.errors.has_key? :senha %>
 		<div class="error_message">
-		<%= @autors.errors[:data_nascimento].first %>
+		<%= @autors.errors[:senha].first %>
 		<% end %>
 		</div>
 	</p>

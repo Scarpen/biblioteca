@@ -1,0 +1,21 @@
+<h1>Home</h1>
+<%=form_for @usuarios do |f| %>
+    <p>
+        <%= f.label :login %>
+        <%= f.text_field :login %>
+    </p>
+    <p>
+        <%= f.label :senha %>
+        <%= f.text_field :senha %>
+    </p>
+<%end%>
+    <p>
+        <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <%= link_to autors_path do %>
+        <button type="button" class="btn">Cancelar</button>
+        <% end %>
+        </div>
+    </p>
+
+
