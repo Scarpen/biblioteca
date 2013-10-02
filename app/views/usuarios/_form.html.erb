@@ -17,7 +17,7 @@
 	<div align="center">
 	<p>
 		<%= f.label :senha %>
-		<%= f.text_field :senha %>
+		<%= f.password_field :senha %>
 		<% if @usuario.errors.has_key? :senha %>
 		<div class="error_message">
 		<%= @usuario.errors[:senha].first %>

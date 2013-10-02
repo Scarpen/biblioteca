@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130924133512) do
+ActiveRecord::Schema.define(:version => 20130930165322) do
 
   create_table "autors", :force => true do |t|
     t.string   "nome"
@@ -23,13 +23,6 @@ ActiveRecord::Schema.define(:version => 20130924133512) do
   create_table "autors_livros", :force => true do |t|
     t.integer "livro_id"
     t.integer "autor_id"
-  end
-
-  create_table "autorslivros", :force => true do |t|
-    t.integer  "livro_id"
-    t.integer  "autor_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "endbiblis", :force => true do |t|
@@ -55,13 +48,6 @@ ActiveRecord::Schema.define(:version => 20130924133512) do
     t.integer "livro_id"
   end
 
-  create_table "listbiblislivros", :force => true do |t|
-    t.integer  "livro_id"
-    t.integer  "listbibli_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
   create_table "livros", :force => true do |t|
     t.string   "titulo"
     t.date     "data"
@@ -76,9 +62,21 @@ ActiveRecord::Schema.define(:version => 20130924133512) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "users", :force => true do |t|
+    t.string   "user"
+    t.string   "password"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "usuarios", :force => true do |t|
     t.string   "login"
     t.string   "senha"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "usuarios_sessions", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
