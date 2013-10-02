@@ -25,6 +25,13 @@ ActiveRecord::Schema.define(:version => 20130924133512) do
     t.integer "autor_id"
   end
 
+  create_table "autorslivros", :force => true do |t|
+    t.integer  "livro_id"
+    t.integer  "autor_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "endbiblis", :force => true do |t|
     t.string   "rua"
     t.string   "bairro"
@@ -48,6 +55,13 @@ ActiveRecord::Schema.define(:version => 20130924133512) do
     t.integer "livro_id"
   end
 
+  create_table "listbiblislivros", :force => true do |t|
+    t.integer  "livro_id"
+    t.integer  "listbibli_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
   create_table "livros", :force => true do |t|
     t.string   "titulo"
     t.date     "data"
@@ -58,13 +72,6 @@ ActiveRecord::Schema.define(:version => 20130924133512) do
   end
 
   create_table "testes", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "user"
-    t.string   "password"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

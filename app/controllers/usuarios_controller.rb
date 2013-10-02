@@ -4,11 +4,10 @@ class UsuariosController < ApplicationController
 	end
 	def new
 		@usuario = Usuario.new
-		3.times { @usuarios.autors.build }
 	end
 	def create
 		@usuario = Usuario.new(params[:usuario])
-		if @usuarioso.save
+		if @usuario.save
 			redirect_to @usuario, :notice => 'Usuario Cadastrado'
 			
 		else
@@ -16,20 +15,11 @@ class UsuariosController < ApplicationController
 		end
 	end
 	def show
-		@usuarios = Usuario.new
-		@usuario  = Usuario.all
-
-		@usuario.each do |user|
-			if(@usuarios.login = user.login)
-				if(@usuarios.senha = user.senha)
-					redirect_to endbibli_path, :notice => 'Login feito com sucesso'
-				end
-			end
-		end
+		@usuario = Usuario.new
 	end
 
 	def edit
-		@usuarios= Usuario.find(params[:id])
+		@usuario = Usuario.find(params[:id])
 	end
 
 	def update

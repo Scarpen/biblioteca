@@ -1,4 +1,4 @@
-<% if  @usuarios.errors.any? %>
+<% if  @usuario.errors.any? %>
 <div id="error_explanation">
 	<h2> Infelizmente não foi possivel completar a ação. </h2>
 </div>
@@ -8,19 +8,19 @@
 	<p>
 		<%= f.label :login %>
 		<%= f.text_field :login %>
-		<% if @autors.errors.has_key? :login %>
+		<% if @usuario.errors.has_key? :login %>
 		<div class="error_message">
-		<%= @autors.errors[:login].first %>
+		<%= @usuario.errors[:login].first %>
 		<% end %>
 		</div>
 	</p>
 	<div align="center">
 	<p>
 		<%= f.label :senha %>
-		<%= f.date_select :senha %>
-		<% if @autors.errors.has_key? :senha %>
+		<%= f.text_field :senha %>
+		<% if @usuario.errors.has_key? :senha %>
 		<div class="error_message">
-		<%= @autors.errors[:senha].first %>
+		<%= @usuario.errors[:senha].first %>
 		<% end %>
 		</div>
 	</p>
@@ -28,7 +28,7 @@
 	<p>
 		<div class="form-actions">
   		<button type="submit" class="btn btn-primary">Salvar</button>
-  		<%= link_to autors_path do %>
+  		<%= link_to usuarios_path do %>
   		<button type="button" class="btn">Cancelar</button>
   		<% end %>
 		</div>
